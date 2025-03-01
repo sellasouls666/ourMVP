@@ -51,7 +51,12 @@ namespace MyMVP
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-           presenter_.Model__DeleteUser();
+            DialogResult dialogResult = MessageBox.Show("Вы уверены в удалении данного пользователя?", "Подтверждение", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                presenter_.Model__DeleteUser();
+            }
+            else if (dialogResult == DialogResult.No){}
         }
 
         public int GetSelectedUserIndex()
