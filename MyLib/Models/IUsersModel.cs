@@ -13,6 +13,7 @@ namespace MyLib.Models
         List<User> GetUsers();
         void FiltrUserData(string NameFiltr, string input);
         void ChangeUser(User u);
+        void DeleteUser(int del);
 
         event Action SuccessLoadedInfoUsers;
     }

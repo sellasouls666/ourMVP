@@ -46,17 +46,17 @@ namespace MyMVP
 
         private void UsersList_SelectionChanged(object sender, EventArgs e)
         {
-            presenter_.View__SelectedUser(UsersList.CurrentCell.RowIndex);
+            presenter_.View__SelectedUser(GetSelectedUserIndex());
         }
 
-        public int GetUserIndex()
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+           presenter_.Model__DeleteUser();
+        }
+
+        public int GetSelectedUserIndex()
         {
             return UsersList.CurrentCell.RowIndex;
-        }
-
-        private void UsersList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -34,6 +34,7 @@
             this.Clear = new System.Windows.Forms.Button();
             this.ComboBoxFiltr = new System.Windows.Forms.ComboBox();
             this.userCard = new UserCard.UserCard();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsersList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,6 @@
             this.UsersList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsersList.Size = new System.Drawing.Size(750, 207);
             this.UsersList.TabIndex = 0;
-            this.UsersList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersList_CellContentClick);
             this.UsersList.SelectionChanged += new System.EventHandler(this.UsersList_SelectionChanged);
             // 
             // NameTextBox
@@ -94,11 +94,22 @@
             this.userCard.Size = new System.Drawing.Size(519, 243);
             this.userCard.TabIndex = 5;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(29, 323);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(206, 23);
+            this.deleteButton.TabIndex = 6;
+            this.deleteButton.Text = "Удалить пользователя";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 505);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.userCard);
             this.Controls.Add(this.ComboBoxFiltr);
             this.Controls.Add(this.Clear);
@@ -121,6 +132,7 @@
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.ComboBox ComboBoxFiltr;
         private UserCard.UserCard userCard;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 

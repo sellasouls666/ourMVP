@@ -64,6 +64,17 @@ namespace MyLib.Presenters
             model_.ChangeUser(u);
             
         }
+
+        public void Model__DeleteUser()
+        {
+            int delIndex = view_.GetSelectedUserIndex();
+            if (delIndex < 0 || delIndex >= model_.GetUsers().Count)
+            {
+                return;
+            }
+            User u = model_.GetUsers()[delIndex];
+            model_.DeleteUser(u.Id);
+        }
     }
 
   

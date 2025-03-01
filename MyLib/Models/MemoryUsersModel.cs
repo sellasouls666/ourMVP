@@ -77,5 +77,15 @@ namespace MyLib.Models
                 }
             }
         }
+
+        public void DeleteUser (int del)
+        {
+            User delete = FiltrUser.FirstOrDefault(u => u.Id == del);
+            if (delete != null)
+            {
+                _users.Remove(delete); FiltrUser.Remove(delete);
+                SuccessLoadedInfoUsers.Invoke();
+            }
+        }
     }
 }
